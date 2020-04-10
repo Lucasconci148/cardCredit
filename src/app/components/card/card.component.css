@@ -1,0 +1,40 @@
+.card {
+    display: flex;  
+    align-items: center;
+    flex-direction: column;
+
+    transition: .3s ease all;
+	transform: rotateY(0deg);
+	transform-style: preserve-3d;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.card.active {
+	transform: rotateY(180deg);
+}
+
+.card-font {
+    background-color: darkblue;
+    /*background: url(../img/bg-tarjeta/bg-tarjeta-02.jpg);*/
+    height: 260px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
+    background-size: cover;
+}
+
+.card-back {
+    background-color: darkred;
+    /*background: url(../img/bg-tarjeta/bg-tarjeta-02.jpg);*/
+    height: 260px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
+
+    background-size: cover;
+	position: absolute;
+	top: 0;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
