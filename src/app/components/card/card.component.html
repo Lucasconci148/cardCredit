@@ -1,12 +1,87 @@
-<section id="card" class="card" 
-    (click)="clickEvent()"    
+<section id="card" class="card"     
     [ngClass]="isBack ? 'active' : ''">
     
-    <div id="card-font" class="card-font">
+    <div id="card-font"  (click)="clickEvent()" class="card-font">
 
+        <div style="height: 130px; display: flex; flex-direction: row-reverse;">
+            <div >
+                <img *ngIf="isMaster" style="height: 70px;" src="../../../assets/mastercard.png" alt="mastercard">
+                <img *ngIf="isVisa" style="height: 70px;" src="../../../assets/visa.png" alt="visa">
+             </div>
+        </div>
+          
+        <section style="height: 60px;">
+            <p class="number-title">Número Tarjeta</p>
+            <p class="number">{{ number }}</p>
+        </section>
+
+        <section style="display: flex; justify-content: space-between;">
+            <div style="flex-direction: column;">
+                <p class="number-title">Nombre Tarjeta</p>
+                <p class="number">{{ name }}</p>
+            </div>
+            
+            <div style="flex-direction: column;">
+                <p class="number-title">Vencimiento</p>
+                <p class="number">{{ month }} / {{ year }}</p>
+            </div>
+        </section>
     </div>
     
-    <div id="card-back" class="card-back">
-    
+    <div id="card-back"  (click)="clickEvent()" class="card-back">
+        <div>Centro de atencion al cliente 0800-800-088</div>
+        <div class="magnetic-bar"></div>
+        <div style="display: flex; justify-content: space-between; margin-top: 80px;">
+            <div>
+                <p class="number-title">Firma</p>
+                <div style="height: 40px; width: 400px; background-color: gray;">
+                </div>
+            </div>
+            <div id="ccv">
+                <p class="number-title">CCV</p>
+                <p class="ccv" 
+                style="height: 20px; padding: 5px; 
+                width: 100px; 
+                font-size: 18px;
+                font-weight: 600;
+                background-color: white; margin-top: 10px;">
+                {{ cvv }}</p>
+            </div>
+        </div>
+       
+        <p style="margin-top: 30px; color: white; font-size: 15px;"> 
+            Lee el primer número de tu número de tarjeta de crédito o débito para saber qué tipo de tarjeta tienes. Las tarjetas Visa comienzan con el número 4 y las tarjetas MasterCard comienzan con 5.
+        </p>
     </div>
 </section>
+
+<div class="form">
+    <div style="margin-top: 40px;"></div>
+    <mat-form-field class="example-full-width" style="width: 100%;">
+        <mat-label>Numero Tarjeta</mat-label>
+        <input (focus)="showFront()" (ngModelChange)="changeCardNumber()"
+        matInput [(ngModel)]="number">
+    </mat-form-field>
+
+    <div style="margin-top: 40px;"></div>
+    <mat-form-field class="example-full-width" style="width: 100%;">
+        <mat-label>Nombre Completo</mat-label>
+        <input (focus)="showFront()" matInput [(ngModel)]="name">
+    </mat-form-field>
+
+    <div style="margin-top: 40px;"></div>
+    <mat-form-field class="example-full-width" style="width: 30%;">
+        <mat-label>Mes Vencimiento</mat-label>
+        <input (focus)="showFront()" matInput [(ngModel)]="month">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" style="width: 30%; margin-left: 5%;">
+        <mat-label>Año Vencimiento</mat-label>
+        <input (focus)="showFront()" matInput [(ngModel)]="year">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" style="width: 30%; margin-left: 5%;">
+        <mat-label>CVV</mat-label>
+        <input (focus)="shoBack()" matInput [(ngModel)]="cvv">
+    </mat-form-field>
+</div>
