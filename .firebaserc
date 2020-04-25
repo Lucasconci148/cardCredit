@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cardcreditform": {
+      "hosting": {
+        "cardCreditProyect": [
+          "cardcreditform"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cardcreditform"
+  }
+}
