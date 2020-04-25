@@ -13,15 +13,14 @@ export class CardComponent {
     public number = '';
     public isVisa = false;
     public isMaster = false;
-
     public month = '';
     public year = '';
 
     clickEvent() {
-        this.isBack = !this.isBack;
+      this.isBack = !this.isBack;
     }
 
-    shoBack() {
+    showBack() {
       this.isBack = true;
     }
 
@@ -30,7 +29,7 @@ export class CardComponent {
     }
 
     changeCardNumber() {
-      console.log(this.number.charAt(0));
+      this.number = this.number.replace(/\s+/g, '').replace(/(\d{4})/g, '$1 ').trim();
       switch (this.number.charAt(0)) {
         case '5':
           this.isMaster = true;

@@ -13,6 +13,7 @@
 	transform: rotateY(180deg);
 }
 
+/* FRENTE DE LA TARJETA */
 .card-font {
     cursor: pointer;
     padding: 25px;
@@ -22,6 +23,21 @@
     box-shadow: 0 10px 10px 0 rgba(90,116,148,0.3);
     background: url(../../../assets/card.png);
     background-size: cover;
+}
+
+.card-font-type {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 130px;
+}
+
+.card-front-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-front-content-direction {
+    flex-direction: column;
 }
 
 .number {
@@ -41,10 +57,9 @@
     1px 0 black, 0 -1px black
 }
 
-
+/* PARTE TRASERA DE LA TARJETA */
 .card-back {
     cursor: pointer;
-
     padding: 25px;
     height: 260px;
     width: 500px;
@@ -59,6 +74,34 @@
 	backface-visibility: hidden;
 }
 
+.card-back-data {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.cvv-block {
+    height: 20px; 
+    padding: 5px; 
+    width: 100px; 
+    font-size: 18px;
+    font-weight: 600;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.firm {
+    height: 40px;
+    width: 400px;
+    background-color: gray;
+}
+
+.card-back-text {
+    margin-top: 30px;
+    color: white;
+    font-size: 15px;
+}
+
 .magnetic-bar { 
     height: 50px;
     background: #000;
@@ -68,6 +111,7 @@
 }
 
 
+/* Formulario */
 .form {
     background-color: #fafafa;
     margin-top: -45px;
@@ -76,4 +120,26 @@
     width: 700px;
     box-shadow: 0 10px 10px 0 rgba(159, 163, 168, 0.3);
     border-radius: 10px;
+}
+
+
+/* Spaciados */
+.height-65 {
+    height: 65px;
+}
+
+.margin-top-40 {
+    margin-top: 40px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.width-30 {
+    width: 30%;
+}
+
+.margin-left {
+    margin-left: 5%;
 }
