@@ -29,7 +29,6 @@ export class CardComponent {
     }
 
     changeCardNumber() {
-      this.number = this.number.replace(/\s+/g, '').replace(/(\d{4})/g, '$1 ').trim();
       switch (this.number.charAt(0)) {
         case '5':
           this.isMaster = true;

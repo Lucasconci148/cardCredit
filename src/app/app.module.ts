@@ -7,11 +7,13 @@ import { CardComponent } from './components/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { SpaceNumberPipe } from './spaceNumber.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
+    SpaceNumberPipe,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormsModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [SpaceNumberPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

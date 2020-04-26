@@ -10,13 +10,13 @@
           
         <section class="height-65">
             <p class="number-title">Número Tarjeta</p>
-            <p class="number">{{ number }}</p>
+            <p class="number">{{ number | spaceNumber}}</p>
         </section>
 
         <section class="card-front-content">
             <div class="card-front-content-direction">
                 <p class="number-title">Nombre Tarjeta</p>
-                <p class="number">{{ name }}</p>
+                <p class="number">{{ name | uppercase }}</p>
             </div>
             
             <div class="card-front-content-direction">
@@ -27,7 +27,7 @@
     </div>
     
     <div id="card-back"  (click)="clickEvent()" class="card-back">
-        <div>Centro de atencion al cliente 0800-800-088</div>
+        <div>Centro de atencion al cliente ####-###-###</div>
         <div class="magnetic-bar"></div>
         <div class="card-back-data">
             <div>
@@ -49,7 +49,7 @@
 <div class="form">
     <mat-form-field class="margin-top-40 full-width">
         <mat-label>Numero Tarjeta</mat-label>
-        <input  maxlength="16" (focus)="showFront()" (ngModelChange)="changeCardNumber()"
+        <input maxlength="16" (focus)="showFront()" (ngModelChange)="changeCardNumber()"
         matInput [(ngModel)]="number">
     </mat-form-field>
 
