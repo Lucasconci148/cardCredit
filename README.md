@@ -1,6 +1,6 @@
 # CARD CREDIT FORM
 
-Formulario de carga de tarjeta de credito para pago electrónico.
+Formulario de carga de tarjeta de crédito para pago electrónico.
 
 * [Demo](https://cardcreditform.web.app/)
 
